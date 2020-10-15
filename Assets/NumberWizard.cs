@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour
 {
+
+    int max = 1000;
+    int min = 1;
+    int guess = 500;
+
     // Start is called before the first frame update
     void Start()
     {
-        int max = 1000;
-        int min = 1;
-
         Debug.Log("Welcome to Number Wizard!");
         Debug.Log("Pick a number...");
         Debug.Log("The highest number that you can pick is: " + max);
@@ -25,11 +27,15 @@ public class NumberWizard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("Up Arrow key was pressed.");
+            min = guess;
+            Debug.Log(guess);
         }
         //Detect when the down arrow key is pressed down
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Down Arrow key was pressed.");
+            max = guess;
+            Debug.Log(guess);
         }
         //Detect when the Return key is pressed down
         else if (Input.GetKeyDown(KeyCode.Return))
